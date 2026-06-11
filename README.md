@@ -1,6 +1,6 @@
 # blockchain0x-go
 
-[![Go reference](https://pkg.go.dev/badge/github.com/Tosh-Labs/blockchain0x-go.svg)](https://pkg.go.dev/github.com/Tosh-Labs/blockchain0x-go)
+[![Go reference](https://pkg.go.dev/badge/github.com/tosh-labs/blockchain0x-go.svg)](https://pkg.go.dev/github.com/tosh-labs/blockchain0x-go)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Go ≥ 1.22](https://img.shields.io/badge/go-%E2%89%A51.22-brightgreen.svg)](#requirements)
 
@@ -13,7 +13,7 @@ surface lands in sub-plan 21.3 Phase C follow-up rows.
 ## Install
 
 ```bash
-go get github.com/Tosh-Labs/blockchain0x-go@v0.0.1-alpha.0
+go get github.com/tosh-labs/blockchain0x-go@v0.0.1-alpha.0
 ```
 
 Requires Go 1.22 or newer.
@@ -27,7 +27,7 @@ import (
 	"context"
 	"log"
 
-	blockchain0x "github.com/Tosh-Labs/blockchain0x-go"
+	blockchain0x "github.com/tosh-labs/blockchain0x-go"
 )
 
 func main() {
@@ -60,7 +60,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/Tosh-Labs/blockchain0x-go/webhooks"
+	"github.com/tosh-labs/blockchain0x-go/webhooks"
 )
 
 func receive(w http.ResponseWriter, r *http.Request) {
@@ -105,7 +105,7 @@ Always branch on `Code`, never regex-match `Message`:
 import (
 	"errors"
 
-	blockchain0x "github.com/Tosh-Labs/blockchain0x-go"
+	blockchain0x "github.com/tosh-labs/blockchain0x-go"
 )
 
 _, err := client.APIKeys.List(ctx)
@@ -136,7 +136,7 @@ is honoured when the server sends it.
 ## Workspace keys (sub-plan 21.3)
 
 Two key shapes exist (see
-[docs/concept-api-key-types.md](https://github.com/Tosh-Labs/blockchain0x-app/blob/dev/docs/concept-api-key-types.md)
+[docs/concept-api-key-types.md](https://github.com/tosh-labs/blockchain0x-app/blob/dev/docs/concept-api-key-types.md)
 for the full decision tree):
 
 - **Wallet-only** - bound to ONE agent. Right shape for an autonomous AI agent that IS one wallet.
@@ -168,10 +168,10 @@ rationale.
 ## Source-of-truth + distribution
 
 Source-of-truth: this directory in
-[Tosh-Labs/blockchain0x-app](https://github.com/Tosh-Labs/blockchain0x-app)
+[tosh-labs/blockchain0x-app](https://github.com/tosh-labs/blockchain0x-app)
 under `packages/sdk-go/`.
 
-Public mirror: [Tosh-Labs/blockchain0x-go](https://github.com/Tosh-Labs/blockchain0x-go)
+Public mirror: [tosh-labs/blockchain0x-go](https://github.com/tosh-labs/blockchain0x-go)
 (receives merges from this directory on dispatch of the
 `mirror-sdk-go` workflow). Go modules read tags from this mirror
 directly - no central registry is involved.

@@ -6,13 +6,13 @@
 //
 // Distribution:
 //
-//	go get github.com/Tosh-Labs/blockchain0x-go@v0.0.1-alpha.0
+//	go get github.com/tosh-labs/blockchain0x-go@v0.0.1-alpha.0
 //
 // The Go ecosystem treats every module as semver, with pre-release
 // suffixes following the `-alpha.N` / `-beta.N` / `-rc.N` convention.
 // Setting the suffix in the tag is enough; the module manifest itself
 // does not encode the version.
 
-module github.com/Tosh-Labs/blockchain0x-go
+module github.com/tosh-labs/blockchain0x-go
 
 go 1.22

@@ -29,12 +29,12 @@ Rationale:
 ## Distribution
 
 Go modules via git tags - no central registry. Each release in
-`Tosh-Labs/blockchain0x-go` (the public mirror) tags `vX.Y.Z` and
-`go get github.com/Tosh-Labs/blockchain0x-go@vX.Y.Z` Just Works.
+`tosh-labs/blockchain0x-go` (the public mirror) tags `vX.Y.Z` and
+`go get github.com/tosh-labs/blockchain0x-go@vX.Y.Z` Just Works.
 
 ## Module path
 
-The published module path is `github.com/Tosh-Labs/blockchain0x-go`
+The published module path is `github.com/tosh-labs/blockchain0x-go`
 (matches the mirror). Source-of-truth in this monorepo at
 `packages/sdk-go/` does not declare a module - it's a build artifact
 of the mirror pipeline, not directly `go get`-able.

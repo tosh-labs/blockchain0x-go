@@ -6,14 +6,14 @@ separate publish step is needed.
 
 ## Prerequisites (one-time, owner)
 
-1. **Public mirror repo**: create `Tosh-Labs/blockchain0x-go`
+1. **Public mirror repo**: create `tosh-labs/blockchain0x-go`
    (Apache-2.0; default branch `main`). The first mirror snapshot
    supplies the README/license.
 
 2. **GitHub PAT**: same fine-grained PAT used by the Node + Python
    mirror workflows (Contents: read+write on the mirror repos). The
    secret `MIRROR_TO_PUBLIC_GITHUB_PAT_TOKEN` on
-   `Tosh-Labs/blockchain0x-app` covers all three.
+   `tosh-labs/blockchain0x-app` covers all three.
 
 3. **No third-party registry**: Go modules read straight from git
    tags on the public mirror. No Trusted Publisher OIDC setup.
@@ -38,7 +38,7 @@ from the git tag set by the mirror workflow.
 
 ### Step 2 - dispatch the mirror workflow
 
-From the GitHub Actions tab on `Tosh-Labs/blockchain0x-app`:
+From the GitHub Actions tab on `tosh-labs/blockchain0x-app`:
 
 1. Open the `mirror-sdk-go` workflow.
 2. Click **Run workflow** -> branch `dev`.
@@ -55,7 +55,7 @@ From the GitHub Actions tab on `Tosh-Labs/blockchain0x-app`:
    - replaces the public repo's contents,
    - commits, tags `<version>`, and pushes.
 
-`go get github.com/Tosh-Labs/blockchain0x-go@<version>` is live as
+`go get github.com/tosh-labs/blockchain0x-go@<version>` is live as
 soon as the push lands (~10 seconds). `pkg.go.dev` indexes the new
 version on its next sweep (usually within an hour).
 
@@ -64,8 +64,8 @@ version on its next sweep (usually within an hour).
 ```bash
 mkdir /tmp/b0x-verify && cd /tmp/b0x-verify
 go mod init verify
-go get github.com/Tosh-Labs/blockchain0x-go@v0.0.1-alpha.0
-go doc github.com/Tosh-Labs/blockchain0x-go
+go get github.com/tosh-labs/blockchain0x-go@v0.0.1-alpha.0
+go doc github.com/tosh-labs/blockchain0x-go
 ```
 
 The `go doc` output should show the package summary + the public
@@ -75,7 +75,7 @@ types (Client, APIKey, etc.).
 
 Go semver pre-release tags follow the `-alpha.N` / `-beta.N` /
 `-rc.N` convention. `go get` resolves them only when explicitly
-requested - `go get github.com/Tosh-Labs/blockchain0x-go@latest`
+requested - `go get github.com/tosh-labs/blockchain0x-go@latest`
 prefers stable releases first.
 
 Examples:
